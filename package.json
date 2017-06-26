@@ -1,0 +1,32 @@
+{
+  "name": "allex_portofficeserverruntimelib",
+  "version": "1.0.0",
+  "description": "AllexJS server runtime lib for port monitoring",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allex-serverruntime-libs/portoffice.git"
+  },
+  "dependencies": {
+    "allexlib": "2.x",
+    "allex_ispipetakenserverruntimelib": "1.x",
+    "allex_temppipedirserverruntimelib": "1.x"
+  },
+  "keywords": [
+    "ecosystem:AllexJS",
+    "server",
+    "runtime",
+    "port",
+    "office",
+    "lib"
+  ],
+  "author": "Andrija Petrovic <andrija.hers@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allex-serverruntime-libs/portoffice/issues"
+  },
+  "homepage": "https://github.com/allex-serverruntime-libs/portoffice#readme"
+}
