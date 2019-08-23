@@ -1,6 +1,6 @@
 {
   "name": "allex_portofficeserverruntimelib",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "AllexJS server runtime lib for port monitoring",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/allex-serverruntime-libs/portoffice.git"
   },
   "dependencies": {
-    "allexlib": "2.x",
+    "allexlib": "3.x",
     "allex_ispipetakenserverruntimelib": "1.x",
     "allex_temppipedirserverruntimelib": "1.x"
   },
