@@ -75,9 +75,6 @@ function createPortSuite (lib) {
   }
 
   function check(port, address, defer) {
-    if (lib.isArray(port)) {
-      return checkany(port);
-    }
     return communicate({
       op: 'check',
       port: port,
@@ -98,28 +95,6 @@ function createPortSuite (lib) {
       op: 'release',
       port: port
     },defer);
-  }
-
-  function onTestIfFree (portandipaddress, isfree) {
-    return isfree ? portandipaddress : null;
-  }
-  function oneCheckerOfMany (portandipaddress) {
-    var ret = check(portandipaddress.port, portandipaddress.ipaddress).then(onTestIfFree.bind(null, portandipaddress));
-    portandipaddress = null;
-    return ret;
-  }
-
-  function checkany (portandipaddresses) {
-    if (!(lib.isArray(portandipaddresses) && portandipaddresses.length>0)) {
-      return q([]);
-    }
-    return q.allSettled(portandipaddresses.map(oneCheckerOfMany)).then(
-      function (states) {
-        return states
-          .filter(function (state) {return !!state && state.state == 'fulfilled' && state.value;})
-          .map(function(state) {return state.value;});
-      }
-    );
   }
 
   return {

@@ -1,6 +1,6 @@
 {
   "name": "allex_portofficeserverruntimelib",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "AllexJS server runtime lib for port monitoring",
   "main": "index.js",
   "scripts": {
