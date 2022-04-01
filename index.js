@@ -32,11 +32,13 @@ function createPortSuite (lib) {
   }
 
   function run(obj, defer, sockettoprogram) {
+    var portoffice;
     if (!sockettoprogram) {
-      child_process.spawn('node',[Path.join(__dirname, 'portoffice.js')],{
+      portoffice = child_process.spawn('node',[Path.join(__dirname, 'portoffice.js')],{
         detached: true,
         stdio: 'inherit'
       });
+      portoffice.unref();
       setTimeout(communicate.bind(null, obj, defer));
       return;
     }
