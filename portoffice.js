@@ -15,6 +15,8 @@ var net = require('net'),
   sec = 1000,
   minute = 60 * sec;
 
+lib.shouldClose.attachForSingleShot(process.exit.bind(process, 0));
+
 function checkReservations() {
   _portstounreserve.forEach(function(r){
     _reservations.remove(r);
@@ -223,7 +225,7 @@ function doProcess(job) {
     _q.push(job);
   } else {
     _currentDefer = job.defer;
-    _currentDefer.promise.done(do_q);
+    _currentDefer.promise.done(do_q, do_q);
     job.go();
   }
 }
